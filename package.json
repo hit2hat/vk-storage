@@ -1,6 +1,6 @@
 {
   "name": "vk-storage",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Wrapper for VK Connect for simply use storage",
   "main": "index.js",
   "repository": "https://github.com/hit2hat/vk-storage",
