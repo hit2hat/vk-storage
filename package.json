@@ -1,0 +1,13 @@
+{
+  "name": "vk-storage",
+  "version": "1.0.0",
+  "description": "Wrapper for VK Connect for simply use storage",
+  "main": "index.js",
+  "repository": "https://github.com/hit2hat/vk-storage",
+  "author": "hit2hat",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "@vkontakte/vkui-connect-promise": "^0.1.19"
+  }
+}
