@@ -8,8 +8,9 @@ Wrapper for VK Connect for simply use storage
 ### Quick start
 ```js
 import VKStorage from "vk-storage";
+import connect from "@vkontakte/vkui-connect-promise";
 
-VKStorage.init({ access_token: "<TOKEN>" }).catch(console.error);
+VKStorage.init({ access_token: "<TOKEN>", connect }).catch(console.error);
 VKStorage.subscribe(console.log);
 ```
 
