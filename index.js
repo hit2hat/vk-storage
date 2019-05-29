@@ -1,13 +1,13 @@
-import connect from "@vkontakte/vkui-connect-promise";
-
 const VK_API_VERSION = "5.95";
 
 let access_token = "";
+let connect = null;
 let store = [];
 const subscribers = [];
 
 const init = (params) => new Promise(async (resolve, reject) => {
-    if (!params.access_token) return reject("access_token not found in init params");
+    if (!params || !params.access_token || !params.connect) return reject("required data not found in init params");
+    connect = params.connect;
     access_token = params.access_token;
     const keys = await __getAllKeys();
     store = await __loadByKeys(keys);
@@ -47,7 +47,8 @@ const __getAllKeys = () => new Promise((resolve, reject) => {
         .catch(() => reject("can't get all keys"))
 });
 
-const __loadByKeys = (keys) => new Promise((resolve, reject) => {
+const __loadByKeys = (keys = []) => new Promise((resolve, reject) => {
+    if (keys.length === 0) return resolve({});
     connect.send("VKWebAppCallAPIMethod", {
         "method": "storage.get",
         "params": {
